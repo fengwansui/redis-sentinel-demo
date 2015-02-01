@@ -1,9 +1,10 @@
-package mycode.redis;
+package com.sylar.test;
 
-import mycode.redis.lib.RedisSentinel;
-import mycode.redis.lib.RedisSentinelJedisPool;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.ShardedJedis;
+
+import com.sylar.RedisSentinel;
+import com.sylar.RedisSentinelJedisPool;
 
 public class RedisSentinelClientTest {
 
@@ -18,9 +19,6 @@ public class RedisSentinelClientTest {
 		setRedisSentinelJedisPool(redisSentinelJedisPool);
 	}
 
-	/**
-	 * 模拟多线程操作
-	 */
 	public static void setRedisSentinelShardedJedisPool(final RedisSentinel client) {
 		new Thread(new Runnable() {
 			@Override
@@ -47,9 +45,6 @@ public class RedisSentinelClientTest {
 		}).start();
 	}
 
-	/**
-	 * 模拟多线程操作
-	 */
 	public static void setRedisSentinelJedisPool(final RedisSentinel client) {
 		new Thread(new Runnable() {
 			@Override
