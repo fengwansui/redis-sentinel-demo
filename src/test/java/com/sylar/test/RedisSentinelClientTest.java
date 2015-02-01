@@ -9,7 +9,7 @@ import com.sylar.RedisSentinelJedisPool;
 public class RedisSentinelClientTest {
 
 	public static void main(String[] args) throws InterruptedException {
-		String host = "192.168.1.108";
+		String host = "192.168.10.109";
 		int port = 26379;
 		String clusterName = "mymaster";
 		// RedisSentinel redisSentinelShardedJedisPool = new

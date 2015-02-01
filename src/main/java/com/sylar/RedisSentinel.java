@@ -46,7 +46,7 @@ public abstract class RedisSentinel {
 	 * 升级为主redis，需要重新初始化jedispool
 	 * 
 	 * @param redisSentinel
-	 *            那种监控的连接池（是否分片)
+	 *            哪种监控的连接池（是否分片)
 	 * @param againCheckTime
 	 *            单位（毫秒/millisecond）
 	 * @param clusterName
@@ -74,7 +74,7 @@ public abstract class RedisSentinel {
 						}
 						System.out.println("主redis发生故障，自动切换...");
 						if (redisSentinel instanceof RedisSentinelJedisPool) {
-							createJedisPool(clusterName);// 重新初始化jedispool
+							createJedisPool(clusterName); // 重新初始化jedispool
 							System.out.println("重新初始化jedispool...");
 						} else if (redisSentinel instanceof RedisSentinelShardedJedisPool) {
 							// 暂时不考虑分片
